@@ -30,3 +30,10 @@ export function run2() {
         .then(msg => console.log(msg))
         .catch(msg => console.warn(msg));
 }
+
+export function run3() {
+    let jobs = [worksSometimes(), worksSometimes()];
+    Promise.all(jobs)
+        .then(msgs => console.log("worked. all messages are returned: ", msgs))
+        .catch(msg => console.warn("if it does not work, this single msg is returned: ", msg));
+}

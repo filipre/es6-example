@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf ./dist && mkdir dist",
     "browserify": "./node_modules/.bin/browserify src/main.js -o dist/bundle.js -t babelify",
-    "build": "npm run clean && npm run browserify"
+    "build": "npm run clean && npm run browserify",
+    "start": "npm run build && ws"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
-    "browserify": "^14.5.0"
+    "browserify": "^14.5.0",
+    "local-web-server": "^2.3.0"
   }
 }
