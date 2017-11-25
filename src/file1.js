@@ -1,15 +1,9 @@
-var sqrt = Math.sqrt;
+let sqrt = Math.sqrt;
 
-function square(x) {
+export let square = (x) => {
     return x * x;
-}
+};
 
-function diag(x, y) {
+export let diag = (x, y) => {
     return sqrt(square(x) + square(y));
-}
-
-module.exports = {
-    sqrt: sqrt,
-    square: square,
-    diag: diag,
 };

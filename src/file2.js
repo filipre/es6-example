@@ -1,9 +1,5 @@
 var helloWorld = "HelloWorld";
 
-function print() {
+export function print() {
     console.log(helloWorld);
 }
-
-module.exports = {
-    print: print
-};
