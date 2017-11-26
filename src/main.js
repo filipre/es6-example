@@ -1,3 +1,5 @@
+// import "babel-polyfill";
+
 import * as file1 from './file1';
 import * as file2 from './file2';
 import * as promises from './promises';
