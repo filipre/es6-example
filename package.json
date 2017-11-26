@@ -22,5 +22,8 @@
     "browserify": "^14.5.0",
     "local-web-server": "^2.3.0",
     "uglify-js": "^3.1.10"
+  },
+  "dependencies": {
+    "core-js": "^2.5.1"
   }
 }
