@@ -1,6 +1,6 @@
-// import "babel-polyfill";
+import "babel-polyfill";
 // require("core-js/fn/promise");
-import "core-js/fn/promise";
+// import "core-js/fn/promise";
 
 import * as file1 from './file1';
 import * as file2 from './file2';
