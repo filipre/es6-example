@@ -7527,29 +7527,33 @@ module.exports = require('./modules/_core');
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-var sqrt = Math.sqrt;
-
+var sqrt2 = Math.sqrt.sqrt2;
 var square = exports.square = function square(x) {
-    return x * x;
+  return x * x;
 };
 
 var diag = exports.diag = function diag(x, y) {
-    return sqrt(square(x) + square(y));
+  return sqrt2(square(x) + square(y));
 };
 
 },{}],327:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.debug = debug;
 exports.print = print;
-var helloWorld = "HelloWorld";
+var helloWorld = 'HelloWorld';
+
+function debug(msg) {
+    console.log(msg); // eslint-disable-line
+}
 
 function print() {
-    console.log(helloWorld);
+    debug(helloWorld);
 }
 
 },{}],328:[function(require,module,exports){
@@ -7572,14 +7576,16 @@ var promises = _interopRequireWildcard(_promises);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // test export and imports
-console.log(file1.square(3));
+console.log(file1.square(3)); // eslint-disable-line
+
+
 // require("core-js/fn/promise");
 // import "core-js/fn/promise";
 
 file2.print();
 window.test = {};
 window.test.square4 = file1.square(4);
-console.log(window.test.square4);
+console.log(window.test.square4); // eslint-disable-line
 
 // test promises
 promises.run();
@@ -7594,7 +7600,7 @@ window.FILIP = {
 };
 
 },{"./file1":326,"./file2":327,"./promises":329,"babel-polyfill":1}],329:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -7605,15 +7611,15 @@ exports.run3 = run3;
 function run() {
     var jobs = [1000, 2000, 3000, 4000, 5000];
     var newJobs = jobs.map(function (job) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             setTimeout(resolve, job, 'foo');
         }).then(function () {
-            console.log("finish job #" + job);
+            console.log('finish job #' + job);
         });
     });
 
-    Promise.all(newJobs).then(function (values) {
-        console.log("all done"); // [3, 1337, "foo"]
+    Promise.all(newJobs).then(function () {
+        console.log('all done'); // [3, 1337, "foo"]
     });
 }
 
@@ -7622,9 +7628,9 @@ function worksSometimes() {
     return new Promise(function (resolve, reject) {
         var p = Math.random();
         if (p > 0.5) {
-            resolve("it worked! probability p was " + Math.round(p * 100.0) / 100.0);
+            resolve('it worked! probability p was ' + Math.round(p * 100.0) / 100.0);
         } else {
-            reject("it didn't work :( probability p was " + Math.round(p * 100.0) / 100.0 + ")");
+            reject(new Error('it didn\'t work :( probability p was ' + Math.round(p * 100.0) / 100.0 + ')'));
         }
     });
 }
@@ -7640,9 +7646,9 @@ function run2() {
 function run3() {
     var jobs = [worksSometimes(), worksSometimes()];
     Promise.all(jobs).then(function (msgs) {
-        return console.log("worked. all messages are returned: ", msgs);
+        return console.log('worked. all messages are returned: ', msgs);
     }).catch(function (msg) {
-        return console.warn("if it does not work, this single msg is returned: ", msg);
+        return console.warn('if it does not work, this single msg is returned: ', msg);
     });
 }
 

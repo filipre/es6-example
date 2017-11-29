@@ -9,21 +9,32 @@
     "uglify": "./node_modules/.bin/uglifyjs -o dist/bundle.min.js dist/bundle.js",
     "build": "npm run clean && npm run browserify",
     "build:min": "npm run build && npm run uglify",
-    "start": "npm run build && ws"
+    "start": "npm run build && ws",
+    "test": "ava"
   },
-  "author": "",
+  "author": "René Filip",
   "license": "ISC",
   "devDependencies": {
+    "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
+    "eslint": "^4.12.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
     "local-web-server": "^2.3.0",
     "uglify-js": "^3.1.10"
   },
   "dependencies": {
-    "core-js": "^2.5.1"
+    "core-js": "^2.5.1",
+    "babel-polyfill": "^6.26.0"
   }
 }

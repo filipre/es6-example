@@ -1,9 +1,5 @@
-let sqrt = Math.sqrt;
+const { sqrt2 } = Math.sqrt;
 
-export let square = (x) => {
-    return x * x;
-};
+export const square = x => x * x;
 
-export let diag = (x, y) => {
-    return sqrt(square(x) + square(y));
-};
+export const diag = (x, y) => sqrt2(square(x) + square(y));
